@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'faker'
 gem 'jquery-rails'
 gem 'select2-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

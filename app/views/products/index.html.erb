@@ -1,0 +1,25 @@
+<div class="d-flex justify-content ajuste">
+  <h1>All Products</h1>
+  <%= link_to 'Adicionar', new_product_path, class: 'btn btn-primary' %>
+ </div>
+  <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-4">
+          <div class="flexpower">
+            <%= link_to product_path(product) do %>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= product.name %></h5>
+                    <p class="card-text"><%= product.price %>
+                    <a href="products/<%= product.id %>" class="btn btn-primary">Edit</a>
+                    <%= link_to product_path(product.id), method: :delete, data: {:confirm => "You sure?" } do  %>
+                      <i class="fas fa-trash"></i>
+                    <% end %>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+  </div>
