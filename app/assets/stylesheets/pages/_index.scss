@@ -6,11 +6,142 @@
   align-items:center;
   justify-content: space-between;
 }
+
+.app__product-box__pricing>div {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+}
+.app__product-box__sale span:first-child {
+    color: #999;
+    text-decoration: line-through;
+}
+.card-title {
+  margin-bottom: -0.25rem;
+}
 .card-img-top {
-    min-height: 200px;
+    min-height: 340px;
     height: 200px;
     object-fit: cover;
 }
-.ajuste {
+.ajuste-title {
+  justify-content: center;
+}
+
+.ajuste-login {
   justify-content: space-between;
+}
+
+.mainbanners {
+  padding: 0 0 3rem;
+  margin-top: 0!important;
+  background-color: #fff;
+}
+
+
+.with-top-bar:not(.page-checkout) .mainbanners {
+    min-height: calc(100vh - 7.8rem);
+}
+.app_product-box_pricing {
+    align-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 4.4rem;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.app_product-box_pricing {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.app_product-box_cost {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+}
+
+.app_product-box h4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    font-family: Gotham,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.app_product-box_cost--promote span:first-child {
+    font-weight: 400;
+    order: 2;
+    padding-left: .8rem;
+}
+
+.app_product-box_cost--promote span:last-child {
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 600;
+    order: 1;
+    padding-left: 0;
+}
+.app__product-box__cost span {
+    line-height: 1;
+}
+
+a, a:active, a:focus, a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+body {
+    background-color: #fff;
+    font-weight: 400;
+    min-height: 100%;
+    opacity: 1;
+    overflow-x: hidden;
+    transition: opacity 2s;
+    margin: 0;
+    font-family: Gotham,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+
+h4 {
+    display: table-row;
+    text-align: center;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+img, svg {
+    vertical-align: middle;
 }
