@@ -1,30 +1,61 @@
 <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
+  <div class="d-flex justify-content ajuste-login">
+    <h1>Bem Vindo <%= current_user.email[0..7] %> </h1>
+    <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sua Conta
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href=""><%= link_to('Logout', destroy_user_session_path, method: :delete) %></a>
+        <a class="dropdown-item" href="#"><%= link_to 'Venda o seu produto', new_product_path%></a>
+      </div>
+    </div>
+  </div>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path) %>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Options
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item active" href=""><%= link_to('Login', new_user_session_path) %></a>
+        <a class="dropdown-item" href="#"><%= link_to 'Venda o seu produto', new_product_path %></a>
+      </div>
+    </div>
+
   </li>
 <% end %>
 <h1><%= @image %></h1>
-<div class="d-flex justify-content ajuste">
+<div class="mainbanners">
+  <div class="app__cms__full-banner app__cms--skip-margin">
+    <a data-label="separadasmasjuntas - image" data-slice="FullBanner" data-url="" href=""><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v1/https://images.prismic.io/amaro/990e9327-6d92-4072-88aa-850bcf392ec2_20200409-AMARO-homepage-mini-banner-separadasmasjuntas-sem-free-shipping.jpg?auto=compress,format&amp;rect=0,0,2560,199&amp;w=2560&amp;h=199"></a>
+    <img class="card-trip" src="https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="">
+  </div>
+</div>
+<div class="d-flex justify-content ajuste-title">
   <h1>All Products</h1>
-    <%= link_to 'Adicionar', new_product_path, class: 'btn btn-primary' %>
  </div>
   <div class="row">
       <% @products.each do |product| %>
-        <div class="col-4">
+        <div class="col-3">
           <div class="flexpower">
             <%= link_to product_path(product) do %>
               <div class="card" style="width: 18rem;">
-                <%  client = GoogleSearchResults.new(engine: 'google', q: product.name + ' car wallpaper', serp_api_key: "66eae7246e7f16569d1b339edfaf198de0676f9711d17ef0840409b88c319a27", tbm: 'isch', num: 1)
-                    url = client.get_hash[:images_results][0][:thumbnail] %>
-                <img class="card-img-top" src="<%= url %>" alt="Card image cap" height="42" width="42">
+                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title"><%= product.name %></h5>
-                    <p class="card-text"><%= product.price %>
-                    <a href="products/<%= product.id %>" class="btn btn-primary">Edit</a>
+                    <h4 class="card-title text-align"><%= product.name %></h4>
+                    <div class="app_product-box_pricing">
+                      <div class="app_product-box_cost app_product-box_cost--promote">
+                        <span>R$<%= product.price %></span>
+                        <span>6x R$<%= product.price/6 %></span>
+                      </div>
+                      <div class="app__product-box__sale">
+                        <span>R$ <%= (product.price*1.10).round(2) %>0</span>
+                        <span>(58% off)</span>
+                      </div>
+                      <%= link_to 'comprar', product_path(product), class: 'btn btn-outline-secondary btn-lg btn-block' %>
+                      </div>
+
                     <% if policy(product).destroy? %>
                       <%= link_to product_path(product.id), method: :delete, data: {:confirm => "You sure?" } do  %>
                         <i class="fas fa-trash"></i>
