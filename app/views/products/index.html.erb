@@ -1,6 +1,16 @@
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path) %>
+  </li>
+<% end %>
+<h1><%= @image %></h1>
 <div class="d-flex justify-content ajuste">
   <h1>All Products</h1>
-  <%= link_to 'Adicionar', new_product_path, class: 'btn btn-primary' %>
+    <%= link_to 'Adicionar', new_product_path, class: 'btn btn-primary' %>
  </div>
   <div class="row">
       <% @products.each do |product| %>
@@ -8,13 +18,17 @@
           <div class="flexpower">
             <%= link_to product_path(product) do %>
               <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+                <%  client = GoogleSearchResults.new(engine: 'google', q: product.name + ' car wallpaper', serp_api_key: "66eae7246e7f16569d1b339edfaf198de0676f9711d17ef0840409b88c319a27", tbm: 'isch', num: 1)
+                    url = client.get_hash[:images_results][0][:thumbnail] %>
+                <img class="card-img-top" src="<%= url %>" alt="Card image cap" height="42" width="42">
                   <div class="card-body">
                     <h5 class="card-title"><%= product.name %></h5>
                     <p class="card-text"><%= product.price %>
                     <a href="products/<%= product.id %>" class="btn btn-primary">Edit</a>
-                    <%= link_to product_path(product.id), method: :delete, data: {:confirm => "You sure?" } do  %>
-                      <i class="fas fa-trash"></i>
+                    <% if policy(product).destroy? %>
+                      <%= link_to product_path(product.id), method: :delete, data: {:confirm => "You sure?" } do  %>
+                        <i class="fas fa-trash"></i>
+                      <% end %>
                     <% end %>
                   </div>
               </div>

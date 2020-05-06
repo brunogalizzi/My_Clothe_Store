@@ -4,9 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 gem 'cloudinary', '~> 1.12.0'
+gem 'devise'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'faker'
+gem 'google_search_results', '~> 1.3'
 gem 'jquery-rails'
+gem 'pundit'
 gem 'select2-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
