@@ -58,12 +58,6 @@
                       </div>
                       <%= link_to 'comprar', product_path(product), class: 'btn btn-outline-secondary btn-lg btn-block' %>
                       </div>
-
-                    <% if policy(product).destroy? %>
-                      <%= link_to product_path(product.id), method: :delete, data: {:confirm => "You sure?" } do  %>
-                        <i class="fas fa-trash"></i>
-                      <% end %>
-                    <% end %>
                   </div>
               </div>
             <% end %>
