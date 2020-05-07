@@ -11,4 +11,33 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "pages/show"
+@import "pages/show";
+
+.form-control.is-valid {
+  border-color: gray !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.8) !important;
+}
+
+.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+  color: black !important;
+}
+
+.header__nav-list {
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+.small_size {
+  font-size: 20px;
+}
+

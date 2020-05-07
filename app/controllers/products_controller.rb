@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @products = policy_scope(Product).order(created_at: :desc)
     # client = GoogleSearchResults.new(q: "coffee", serp_api_key: "66eae7246e7f16569d1b339edfaf198de0676f9711d17ef0840409b88c319a27", tbm: 'isch')
     # url = client.get_hash[:images_results][0][:original]
+    @types = Type.all
   end
   def show
   # tabela que chama type coluna size
