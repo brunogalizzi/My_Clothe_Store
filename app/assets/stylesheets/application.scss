@@ -13,6 +13,11 @@
 @import "pages/index";
 @import "pages/show";
 
+.logo_brand {
+  height: 80px;
+  width: 160px;
+}
+
 .form-control.is-valid {
   border-color: gray !important;
   box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.8) !important;
