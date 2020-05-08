@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :products, except: :index
   resources :users, except: [:index, :destroy]
   resources :carts
+  get '/blusas', to: 'types#blusas', as: 'blusas'
+  get '/sapatos', to: 'types#sapatos', as: 'sapatos'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
