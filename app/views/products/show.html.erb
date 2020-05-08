@@ -18,11 +18,10 @@
         <a href="#select">GG</a>
       </div>
     </p>
-    <p>
-      <strong>Colors:</strong>
-        <i class="fas fa-circle red"></i>
-        <i class="fas fa-circle yellow"></i>
-        <i class="fas fa-circle"></i>
+    <p><strong>Colors:</strong>
+      <i class="fas fa-circle red"></i>
+      <i class="fas fa-circle yellow"></i>
+      <i class="fas fa-circle"></i>
     </p>
 
     <h2>Rating</h2>
@@ -32,18 +31,14 @@
     <span class="fas fa-star-half-alt"></span>
     <span class="fa fa-star not"></span>
     <h4>Avaliado por 1 pessoa</h4>
-    <%= link_to 'comprar', root_path, class: 'btn btn-outline-secondary btn-lg btn-block' %>
-      <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
+    <%= link_to 'Adicionar ao carrinho', root_path, class: 'btn btn-outline-secondary btn-lg btn-block' %>
+    <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
   </div>
 </div>
 
-
-
-
-
 <br>
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', root_path %>
 
  <div class="app__product__colors">
 <!-- <h5>Cor: <span>COBRE</span></h5>
