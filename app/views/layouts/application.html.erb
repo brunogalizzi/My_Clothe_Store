@@ -21,7 +21,7 @@
       <li class="nav-item dropdown">
           <%= link_to "Categorias", "#" , class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <% @types.each do |type| %>
+            <% Type.all.each do |type| %>
             <%= link_to type.name, '/' + type.name.downcase, class: "dropdown-item" %>
             <% end %>
           </div>

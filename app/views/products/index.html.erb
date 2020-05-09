@@ -1,8 +1,7 @@
 <h1><%= @image %></h1>
 <div class="mainbanners">
-  <div class="app__cms__full-banner app__cms--skip-margin">
-    <a data-label="separadasmasjuntas - image" data-slice="FullBanner" data-url="" href=""><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v1/https://images.prismic.io/amaro/990e9327-6d92-4072-88aa-850bcf392ec2_20200409-AMARO-homepage-mini-banner-separadasmasjuntas-sem-free-shipping.jpg?auto=compress,format&amp;rect=0,0,2560,199&amp;w=2560&amp;h=199"></a>
-    <img class="img-banner" src="https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="">
+  <%= link_to 'Adicionar', new_product_path, class: 'btn btn-primary' %>
+  <%= render 'products/carousel' %>
   </div>
 </div>
 <div class="d-flex justify-content ajuste-title">

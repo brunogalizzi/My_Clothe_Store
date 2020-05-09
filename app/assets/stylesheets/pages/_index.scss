@@ -203,14 +203,24 @@ img, svg {
 
 .checkout {
   border: 1px solid;
+  width: 33%;
 }
 .checkout-options {
     border: 1px solid;
     background: black;
     color: white;
 }
+.checkout-options-paid {
+  border: 1px solid;
+  background: green;
+  color: white;
+}
 
 .center {
   justify-content:center;
   }
+
+.input-group-addon {
+  padding-left: 11px;
+}
 

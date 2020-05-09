@@ -43,15 +43,12 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     authorize @product
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      redirect_to product_path(@product), notice: 'product was successfully created.'
+    else
+      raise
     end
   end
   private
@@ -62,7 +59,7 @@ class ProductsController < ApplicationController
   end
   # Only allow a list of trusted parameters through.
   def product_params
-    params.require(:product).permit(:name)
+    params.require(:product).permit(:name, :type_id, :color, :size, :price, :stock)
   end
 
   def set_types
