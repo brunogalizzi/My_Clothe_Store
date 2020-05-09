@@ -37,15 +37,49 @@
   </div>
   </div>
 </div>
+<div class="checkout-shipping">
+  <div class="row d-flex center">
+    <h1>Seu Carrinho, Sr!</h1>
+  </div>
+  <div class="d-flex center">
+    <div class="checkout text-center">
+  <% @cart_products.each do |prod| %>
+  <div class="app__cart__item">
+  <div class="app__cart__item__container">
+    <div class="app__cart__item__image">
+      <img src="https://source.unsplash.com/random?sig=<%= prod.id %>" alt="Card image cap">
+    </div>
+    <div class="app__cart__item__info">
+      <a class="app__cart__item__name" ><%= prod.product.name %></a>
+        <div class="app__cart__item__details">
+          <span>Size:<%= prod.product.size %></span>
+          <span>Color:<%= prod.product.color  %></span>
+        </div>
+        <div class="app__cart__item__options">
+          <div class="app__cart__item__quantity">
+            <span class="is-numeric"><%= prod.quantity %></span>
+          </div>
+          <div class="app__cart__item__price">
+            <span class="is-numeric">R$ <%= prod.product.price %>,00</span>
+          </div>
+        </div>
+        <div class="app__cart__item__warning">Quantidade indisponível.
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row justify-content-between">
     <div class="col-4">
       <p>Valor</p>
     </div>
     <div class="col-4">
-      <p>U$D 34,21</p>
+      <p>R$<%= @total %></p>
     </div>
   </div>
    <%= link_to 'pague agora', pagamento_path, class: 'btn btn-dark btn-lg btn-block' %>
 </div>
-

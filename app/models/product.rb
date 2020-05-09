@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   # validates :photo, presence: true
   belongs_to :type
   belongs_to :user
+  has_many :cart_products, dependent: :destroy
   has_many :carts, through: :cart_products
   # has_many :
 end

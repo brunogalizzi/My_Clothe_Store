@@ -7,10 +7,12 @@ class ProductsController < ApplicationController
   before_action :set_types, only: [:index, :show, :new]
   def index
     @products = policy_scope(Product).order(created_at: :desc)
+
     # client = GoogleSearchResults.new(q: "coffee", serp_api_key: "66eae7246e7f16569d1b339edfaf198de0676f9711d17ef0840409b88c319a27", tbm: 'isch')
     # url = client.get_hash[:images_results][0][:original]
   end
   def show
+    authorize @product
   # tabela que chama type coluna size
   end
   # GET /products/new
@@ -20,8 +22,10 @@ class ProductsController < ApplicationController
   end
   # GET /products/1/edit
   def edit
+    authorize @product
   end
   def destroy
+    authorize @product
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'product was successfully destroyed.' }
@@ -55,7 +59,6 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
-    authorize @product
   end
   # Only allow a list of trusted parameters through.
   def product_params

@@ -31,7 +31,10 @@
     <span class="fas fa-star-half-alt"></span>
     <span class="fa fa-star not"></span>
     <h4>Avaliado por 1 pessoa</h4>
-    <%= link_to 'Adicionar ao carrinho', root_path, class: 'btn btn-outline-secondary btn-lg btn-block' %>
+    <form action="/cart_products?product_id=<%= @product.id %>" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input class="btn btn-outline-secondary btn-lg btn-block" type="submit" value="Adicionar ao carrinho">
+    </form>
     <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
   </div>
 </div>
@@ -39,7 +42,9 @@
 <br>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', root_path %>
-
+<%= link_to product_path(@product), method: :delete, data: {:confirm => "You sure?" } do  %>
+  <i class="fas fa-trash"></i>
+<% end %>
  <div class="app__product__colors">
 <!-- <h5>Cor: <span>COBRE</span></h5>
       <div class="app__product__colors__selector">
