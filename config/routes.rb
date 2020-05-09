@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :products, except: :index
   resources :users, except: [:index, :destroy]
   resources :carts
+  resources :cart_products, only: :create
   get "/pagamento", to: 'carts#pagamento', as: 'pagamento'
   get '/blusas', to: 'types#blusas', as: 'blusas'
   get '/sapatos', to: 'types#sapatos', as: 'sapatos'

@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   validates :stock, numericality: { greater_than_or_equal_to: 0 }
   belongs_to :type
   belongs_to :user
+  has_many :cart_products, dependent: :destroy
   has_many :carts, through: :cart_products
   has_many_attached :photos
 end
