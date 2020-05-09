@@ -27,6 +27,10 @@
   color: black !important;
 }
 
+.was-validated .form-control:valid, .form-control.is-valid {
+  background-image: none !important;
+}
+
 .header__nav-list {
   display: flex;
   -webkit-box-pack: justify;
