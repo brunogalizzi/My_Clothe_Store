@@ -12,7 +12,11 @@
       <div class="flexpower">
         <%= link_to product_path(product) do %>
           <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+            <% if product.photos.present? %>
+              <%= cl_image_tag product.photos.first.key, class:"card-img-top" %>
+            <% else %>
+              <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+            <% end %>
             <div class="card-body">
               <h4 class="card-title text-align"><%= product.name %></h4>
               <div class="app_product-box_pricing">
@@ -32,3 +36,4 @@
     </div>
   <% end %>
 </div>
+
