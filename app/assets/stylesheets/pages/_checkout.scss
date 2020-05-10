@@ -1,0 +1,35 @@
+.checkout {
+  border: 1px solid;
+  width: 33%;
+}
+
+.checkout-shipping {
+  border: .1rem solid #ccc;
+  font-size: 1.4rem;
+  padding: 1.5rem;
+}
+
+.checkout-nav{
+  align-items: center;
+  border-bottom: .1rem solid #ccc;
+  color: #666;
+  display: flex;
+  flex: 1 1;
+  height: 4rem;
+  justify-content: center;
+  pointer-events: none;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+.checkout-options {
+  border: 1px solid;
+  background: black;
+  color: white;
+}
+.checkout-options-paid {
+  border: 1px solid;
+  background: green;
+  color: white;
+}

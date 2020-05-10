@@ -12,6 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 .logo_brand {
@@ -31,6 +32,8 @@
 .was-validated .form-control:valid, .form-control.is-valid {
   background-image: none !important;
 }
+
+@import "pages/cart";
 
 .header__nav-list {
   display: flex;
@@ -52,25 +55,25 @@
 }
 
 .footer-auaha__contact {
-    padding: 20px 0;
-    font-family: 'Montserrat',sans-serif;
+  padding: 20px 0;
+  font-family: 'Montserrat',sans-serif;
 }
 
 .footer-auaha__contact h3 {
-    font-size: 18px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -.01px;
-    color: #2a2b2c;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: 'Oswald',sans-serif !important;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -.01px;
+  color: #2a2b2c;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Oswald',sans-serif !important;
 }
 
 .footer-auaha__contact .inner {
-    text-align: center;
+  text-align: center;
 }
 
 #myInput {
