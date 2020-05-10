@@ -18,11 +18,21 @@
       </li>
     </ul>
   </div>
-
-
-  <!-- Carrinho de compras, anunciar produto e login -->
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
+      <li>
+        <div class="d-flex center">
+          <div class="search-box">
+            <input type="text" placeholder="Procurar..." onkeyup="myFunction()"><span></span>
+          </div>
+        </div>
+      </li>
+      &nbsp&nbsp&nbsp&nbsp
+      <li>
+      <%= link_to carts_path do  %>
+        <i class="fas fa-shopping-cart"></i>
+      <% end %>
+      </li>&nbsp&nbsp
       <% if user_signed_in? %>
         <li>
         <%= link_to carts_path do  %>
@@ -47,6 +57,41 @@
       <% end %>
     </ul>
   </div>
+  <script>
+
+    window.addEventListener('load', function () {
+      window.banner = document.querySelector(".app__cms__full-banner") || "";
+      window.html1 = banner.innerHTML;
+    })
+
+    function myFunction() {
+      // Declare variables
+      var input, filter, div, i, item, txtValue;
+      window.banner.innerHTML = "";
+      input = document.querySelector("input");
+      filter = input.value.toUpperCase();
+      div = document.getElementsByClassName("apply_filter");
+      console.log('oi')
+      for (i = 0; i < div.length; i++) {
+        item = div[i].getElementsByTagName('h4');
+        txtValue = item[0].textContent || item[0].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          div[i].style.display = "";
+        } else {
+          div[i].style.display = "none";
+          }
+        }
+      }
+      'use strict';
+      var searchBox = document.querySelectorAll('.search-box input[type="text"] + span');
+      searchBox.forEach((elm) => {
+        elm.addEventListener('click', () => {
+          elm.previousElementSibling.value = '';
+          myFunction();
+          window.banner.innerHTML = window.html1
+        });
+      });
+  </script>
 </div>
 
 <!-- Alertas -->

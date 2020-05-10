@@ -3,32 +3,28 @@
 
 <div class="d-flex justify-content ajuste-title">
   <h1>Todas as blusas</h1>
-</div>
-
-<div class="row">
-  <% @blusas.each do |blusa| %>
-    <div class="col-3">
-      <div class="flexpower">
-        <%= link_to product_path(blusa) do %>
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= blusa.id %>" alt="Card image cap">
-            <div class="card-body">
-
-              <!-- Nome e preço  -->
-              <h4 class="card-title text-align"><%= blusa.name %></h4>
-              <div class="app_product-box_pricing">
-                <div class="app_product-box_cost app_product-box_cost--promote">
-                  <span>R$<%= blusa.price %></span>
-                  <span>6x R$<%= blusa.price/6 %></span>
-                </div>
-
-                <!-- Valor do desconto -->
-                <div class="app__product-box__sale">
-                  <span>R$ <%= (blusa.price*1.10).round(2) %>0</span>
-                  <span>(58% off)</span>
-                </div>
-                <%= link_to 'Ver mais', product_path(blusa), class: 'btn btn-outline-secondary btn-lg btn-block' %>
-                </div>
+ </div>
+  <div class="row">
+      <% @blusas.each do |blusa| %>
+        <div class="col-3 apply_filter">
+          <div class="flexpower">
+            <%= link_to product_path(blusa) do %>
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= blusa.id %>" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title text-align"><%= blusa.name %></h4>
+                    <div class="app_product-box_pricing">
+                      <div class="app_product-box_cost app_product-box_cost--promote">
+                        <span>R$<%= blusa.price %></span>
+                        <span>6x R$<%= blusa.price/6 %></span>
+                      </div>
+                      <div class="app__product-box__sale">
+                        <span>R$ <%= (blusa.price*1.10).round(2) %>0</span>
+                        <span>(58% off)</span>
+                      </div>
+                      <%= link_to 'comprar', product_path(blusa), class: 'btn btn-outline-secondary btn-lg btn-block' %>
+                      </div>
+                  </div>
               </div>
 
             </div>

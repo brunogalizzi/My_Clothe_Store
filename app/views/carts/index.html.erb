@@ -1,87 +1,85 @@
 <div class="d-flex center">
-  <h1>Amada</h1>
+   <h1>Amada</h1>
 </div>
 <div class="row checkout-nav">
-  <div class="col-sm checkout-options">
-    Endereço
-  </div>
-  <div class="col-sm checkout">
-    Pagamento
-  </div>
-  <div class="col-sm checkout">
-    Resumo
-  </div>
+   <div class="col-sm checkout-options">
+      Endereço
+   </div>
+   <div class="col-sm checkout">
+      Pagamento
+   </div>
+   <div class="col-sm checkout">
+      Resumo
+   </div>
 </div>
-
 <div class="checkout-shipping">
-  <div class="row d-flex center">
-    <h1>Seu Carrinho, Sr!</h1>
-  </div>
-  <div class="d-flex center">
-    <div class="checkout text-center">
-  <% @cart_products.each do |prod| %>
-  <div class="app__cart__item">
-  <div class="app__cart__item__container">
-    <div class="app__cart__item__image">
-      <img src="https://source.unsplash.com/random?sig=<%= prod.id %>" alt="Card image cap">
-    </div>
-    <div class="app__cart__item__info">
-      <a class="app__cart__item__name" ><%= prod.product.name %></a>
-        <div class="app__cart__item__details">
-          <span>Size:<%= prod.product.size %></span>
-          <span>Color:<%= prod.product.color  %></span>
-        </div>
-        <div class="app__cart__item__options">
-          <div class="app__cart__item__quantity">
-            <span class="is-numeric"><%= prod.quantity %></span>
-          </div>
-          <div class="app__cart__item__price">
-            <span class="is-numeric">R$ <%= prod.product.price %>,00</span>
-          </div>
-        </div>
-        <div class="app__cart__item__warning">Quantidade indisponível.
-        </div>
+   <div class="row d-flex center">
+      <h1>Seu Carrinho, Sr!</h1>
+   </div>
+   <div class="d-flex center">
+      <div class="checkout text-center">
+         <% @cart_products.each do |prod| %>
+         <div class="app__cart__item">
+            <div class="app__cart__item__container">
+               <div class="app__cart__item__image">
+                  <img src="https://source.unsplash.com/random?sig=<%= prod.id %>" alt="Card image cap">
+               </div>
+               <div class="app__cart__item__info">
+                  <a class="app__cart__item__name" ><%= prod.product.name %></a>
+                  <div class="app__cart__item__details">
+                     <span>Size:<%= prod.product.size %></span>
+                     <span>Color:<%= prod.product.color  %></span>
+                  </div>
+                  <div class="app__cart__item__options">
+                     <div class="app__cart__item__quantity">
+                        <span class="is-numeric"><%= prod.quantity %></span>
+                     </div>
+                     <div class="app__cart__item__price">
+                        <span class="is-numeric">R$ <%= prod.product.price %>,00</span>
+                     </div>
+                  </div>
+                  <div class="app__cart__item__warning">Quantidade indisponível.
+                  </div>
+               </div>
+            </div>
+         </div>
+         <% end %>
       </div>
-    </div>
-  </div>
-<% end %>
-    </div>
-  </div>
+   </div>
 </div>
-
 <div class="checkout-shipping">
-  <div class="row d-flex center">
-    <h1>Endereço de Entrega</h1>
-  </div>
-  <div class="d-flex center">
-    <div class="checkout text-center">
-    <div>
-      <p>Henrique Starling</p>
-      <p>Rua Felipe dos Santos, 760
-      <br>Lourdes - Belo Horizonte/MG</p>
-      <p>CEP: 30180-160</p>
-          <label for="entrega">Forma de Entrega:</label>
-        <select id="entrega">
-          <option value="Sedex (até 08/05 - GRÁTIS)">Sedex (até 15/05 - R$ 8,90)</option>
-          <option value="Correios">Correios (até 20/05 - GRÁTIS)</option>
-        </select>
-      <button class="btn btn-xs btn-link btn-icon">
-        <i class="i i-pencil"></i>
-        <span>Atualizar o endereço</span>
-      </button>
-    </div>
-  </div>
-  </div>
+   <div class="row d-flex center">
+      <h1>Endereço de Entrega</h1>
+   </div>
+   <div class="d-flex center">
+      <div class="checkout text-center">
+         <div>
+            <p>Henrique Starling</p>
+            <p>Rua Felipe dos Santos, 760
+               <br>Lourdes - Belo Horizonte/MG
+            </p>
+            <p>CEP: 30180-160</p>
+            <label for="entrega">Forma de Entrega:</label>
+            <select id="entrega">
+               <option value="Sedex (até 08/05 - GRÁTIS)">Sedex (até 15/05 - R$ 8,90)</option>
+               <option value="Correios">Correios (até 20/05 - GRÁTIS)</option>
+            </select>
+            <button class="btn btn-xs btn-link btn-icon">
+            <i class="i i-pencil"></i>
+            <span>Atualizar o endereço</span>
+            </button>
+         </div>
+      </div>
+   </div>
 </div>
-
 <div class="container">
-  <div class="row justify-content-between">
-    <div class="col-4">
-      <p>Valor</p>
-    </div>
-    <div class="col-4">
-      <p>R$<%= @total %></p>
-    </div>
-  </div>
+   <div class="row justify-content-between">
+      <div class="col-4">
+         <p>Valor</p>
+      </div>
+      <div class="col-4">
+         <p>R$<%= @total %></p>
+      </div>
+   </div>
    <%= link_to 'pague agora', pagamento_path, class: 'btn btn-dark btn-lg btn-block' %>
 </div>
