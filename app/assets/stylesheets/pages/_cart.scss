@@ -1,0 +1,73 @@
+.app__cart__item {
+  border-bottom: .1rem solid #ccc;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.app__cart__item__container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.app__cart__item__image {
+  margin-right: 1rem;
+  width: 6rem;
+}
+
+.app__cart__item__image img {
+  max-width: 60px;
+}
+
+.app__cart__item__info {
+  flex: 1 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.app__cart__item__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  color: #333;
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  width: calc(100% - 2rem);
+}
+
+.app__cart__item__details {
+  color: #999;
+  line-height: 1.5;
+  margin: .5rem 0;
+}
+
+.app__cart__item__options {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__cart__item__warning {
+  color: #cf3838;
+  margin-top: .3rem;
+}
+
+.app__cart__item__quantity {
+  align-items: center;
+    display: flex;
+}
+
+.app__cart__item__price {
+  display: inline-block;
+  text-align: right;
+}
+
+.app__cart__item__quantity .btn {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1rem;
+  padding: .5rem;
+}
