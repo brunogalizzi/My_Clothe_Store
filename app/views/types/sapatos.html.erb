@@ -1,30 +1,31 @@
 <div class="d-flex justify-content ajuste-title">
   <h1>Todos os sapatos</h1>
- </div>
-  <div class="row">
-      <% @sapatos.each do |sapato| %>
-        <div class="col-3">
-          <div class="flexpower">
-            <%= link_to product_path(sapato) do %>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= sapato.id %>" alt="Card image cap">
-                  <div class="card-body">
-                    <h4 class="card-title text-align"><%= sapato.name %></h4>
-                    <div class="app_product-box_pricing">
-                      <div class="app_product-box_cost app_product-box_cost--promote">
-                        <span>R$<%= sapato.price %></span>
-                        <span>6x R$<%= sapato.price/6 %></span>
-                      </div>
-                      <div class="app__product-box__sale">
-                        <span>R$ <%= (sapato.price*1.10).round(2) %>0</span>
-                        <span>(58% off)</span>
-                      </div>
-                      <%= link_to 'comprar', product_path(sapato), class: 'btn btn-outline-secondary btn-lg btn-block' %>
-                      </div>
-                  </div>
+</div>
+<div class="row">
+  <% @sapatos.each do |sapato| %>
+    <div class="col-3">
+      <div class="flexpower">
+        <%= link_to product_path(sapato) do %>
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= sapato.id %>" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title text-align"><%= sapato.name %></h4>
+              <div class="app_product-box_pricing">
+                <div class="app_product-box_cost app_product-box_cost--promote">
+                  <span>R$<%= sapato.price %></span>
+                  <span>6x R$<%= sapato.price/6 %></span>
+                </div>
+                <div class="app__product-box__sale">
+                  <span>R$ <%= (sapato.price*1.10).round(2) %>0</span>
+                  <span>(58% off)</span>
+                </div>
+                <%= link_to 'comprar', product_path(sapato), class: 'btn btn-outline-secondary btn-lg btn-block' %>
+                </div>
               </div>
-            <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
-  </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

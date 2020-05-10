@@ -12,24 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
-
-.logo_brand {
-  height: 80px;
-  width: 160px;
-}
-
-.form-control.is-valid {
-  border-color: gray !important;
-  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.8) !important;
-}
-
-.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: black !important;
-}
-
-.was-validated .form-control:valid, .form-control.is-valid {
-  background-image: none !important;
-}
+@import "pages/cart";
 
 .header__nav-list {
   display: flex;
@@ -51,25 +34,25 @@
 }
 
 .footer-auaha__contact {
-    padding: 20px 0;
-    font-family: 'Montserrat',sans-serif;
+  padding: 20px 0;
+  font-family: 'Montserrat',sans-serif;
 }
 
 .footer-auaha__contact h3 {
-    font-size: 18px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -.01px;
-    color: #2a2b2c;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: 'Oswald',sans-serif !important;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -.01px;
+  color: #2a2b2c;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Oswald',sans-serif !important;
 }
 
 .footer-auaha__contact .inner {
-    text-align: center;
+  text-align: center;
 }
 
 
