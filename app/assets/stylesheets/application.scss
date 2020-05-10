@@ -12,6 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
 .logo_brand {
   height: 80px;
@@ -72,4 +73,99 @@
     text-align: center;
 }
 
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.search-box {
+    border: solid 2px black;
+    display: inline-block;
+    position: relative;
+    border-radius: 32px;
+    height: 28px;
+  input[type="text"] {
+    font-size: 14px;
+    width: 16px;
+    height: 16px;
+    padding: 0px 12px 0px 12px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 16px;
+    transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
+    position: relative;
+    bottom: 12px;
+    &:focus {
+      outline: none;
+    }
+    &:focus, &:not(:placeholder-shown) {
+      width: 300px;
+      transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+      + span {
+        bottom: -14px;
+        right: 14px;
+        transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+      }
+      + span:after {
+        top: 19px;
+        right: 2px;
+        opacity: 1;
+        transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
+      }
+    }
+  }
+  span {
+    width: 6px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -28px;
+    right: -7px;
+    transition: bottom 300ms ease-out 300ms, right 300ms ease-out 300ms;
+    &:before, &:after {
+      content: '';
+      height: 14px;
+      border-left: solid 2px black;
+      position: absolute;
+      transform: rotate(-45deg)
+    }
+    &:after {
+      transform: rotate(45deg);
+      opacity: 0;
+      top: -20px;
+      right: -10px;
+      transition: top 300ms ease-out, right 300ms ease-out, opacity 300ms ease-out;
+    }
+  }
+}
 
