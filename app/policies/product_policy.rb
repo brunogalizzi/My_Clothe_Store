@@ -10,7 +10,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    is_owner_or_admin
   end
 
   def show?
@@ -18,7 +18,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    is_owner_or_admin
   end
 
   def update?

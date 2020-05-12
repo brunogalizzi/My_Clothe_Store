@@ -10,10 +10,6 @@ class ApplicationPolicy
     false
   end
 
-  def pagamento?
-    true
-  end
-
   def show?
     false
   end
