@@ -4,8 +4,9 @@ require 'google_search_results'
 
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :set_types, only: [:index, :show, :new]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_types, only: [:index, :show, :new, :edit, :set_type]
+  skip_before_action :authenticate_user!, only: [:index, :show, :set_type]
+  skip_after_action :verify_authorized, only: :set_type
   def index
     @products = policy_scope(Product).order(created_at: :desc)
     # client = GoogleSearchResults.new(q: "coffee", serp_api_key: "66eae7246e7f16569d1b339edfaf198de0676f9711d17ef0840409b88c319a27", tbm: 'isch')
@@ -15,6 +16,9 @@ class ProductsController < ApplicationController
     authorize @product
   # tabela que chama type coluna size
   end
+  def set_type
+    @type = Type.all.find(params[:type_id])
+  end
   # GET /products/new
   def new
     @product = Product.new
@@ -23,6 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     authorize @product
+    @type = @types.select { |type| type == @product.type }
   end
   def destroy
     authorize @product
@@ -33,6 +38,7 @@ class ProductsController < ApplicationController
     end
   end
   def update
+    authorize @product
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'product was successfully updated.' }

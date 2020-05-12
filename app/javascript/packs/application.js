@@ -31,4 +31,27 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // var type = document.getElementById("product_type_id");
+  // type.addEventListener('change', (target) => {
+  // console.log(type.value);
+  // return $.ajax({
+  //     url: '/products/set_type/' + type.value,
+  //     type: 'GET',
+  //     data: {
+  //       code: $('#product_size').val()
+  //     },
+  //     success: function(data, event, status, xhr, response) {
+  //       $('#user_id').html(response);
+  //       console.log('success');
+  //       return $("#user_id").show();
+  //     },
+  //     error: function(event, data, status, xhr, response) {
+  //       $('#user_id').html(response);
+  //       console.log('fail')
+  //       return $("#user_id").show();
+  //     }
+  //   });
+  // });
 });
+
+
