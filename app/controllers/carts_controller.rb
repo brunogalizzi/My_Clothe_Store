@@ -1,5 +1,4 @@
 class CartsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
   def index
     @cart = policy_scope(Product).order(created_at: :desc)
     authorize @cart
