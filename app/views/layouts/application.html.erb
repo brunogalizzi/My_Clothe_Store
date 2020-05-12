@@ -15,5 +15,10 @@
     <%= render 'products/navbar' %>
     <%= yield %>
     <%= render 'products/footer' %>
+    <script>
+      window.banner = document.querySelector(".app__cms__full-banner") || "";
+      window.html1 = banner.innerHTML;
+      console.log(banner);
+    </script>
   </body>
 </html>

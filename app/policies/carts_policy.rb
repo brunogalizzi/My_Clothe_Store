@@ -4,4 +4,8 @@ class CartsPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def pagamento?
+    record.user == user
+  end
 end
