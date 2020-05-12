@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Type.create(name: 'Blusas', size: ['S','M','L'], color: ['blue', 'yellow', 'red', 'green'])
-Type.create(name: 'Sapatos', size: ['S','M','L'], color: ['blue', 'yellow', 'red', 'green'])
+Type.create(name: 'Blusas', size: ['P','M','G'], color: ['Azul', 'Amarelo', 'Red', 'Green'])
+Type.create(name: 'Sapatos', size: ['36','37','38','39','40','41','42'], color: ['Azul', 'Amarelo', 'Red', 'Green'])
 
 20.times do
   user = User.new(email: Faker::Name.name.partition(" ").first + '@' + Faker::Color.color_name + '.com', password: '#$taawktljasktlw4aaglj')

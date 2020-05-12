@@ -3,15 +3,30 @@
   width: 160px;
 }
 
-.form-control.is-valid {
-  border-color: gray !important;
-  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.8) !important;
+.login {
+    .form-control.is-valid {
+    border-color: gray !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.8) !important;
+  }
+
+  .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+    color: black !important;
+  }
+
+  .was-validated .form-control:valid, .form-control.is-valid {
+    background-image: none !important;
+  }
 }
 
-.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
-  color: black !important;
+
+.btn-primary {
+  .btn {
+    color: white !important;
+    border-radius: 5px !important;
+    padding: 0.225rem 0.5rem !important;
+  }
 }
 
-.was-validated .form-control:valid, .form-control.is-valid {
-  background-image: none !important;
+.form-control-file, .form-control-range, button, input {
+  font-size: 14px !important;
 }
