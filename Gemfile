@@ -11,6 +11,8 @@ gem 'google_search_results', '~> 1.3'
 gem 'jquery-rails'
 gem 'pundit'
 gem 'select2-rails'
+gem 'searchkick', '~> 3.0'
+gem 'pg_search'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record

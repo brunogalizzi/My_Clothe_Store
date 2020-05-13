@@ -17,20 +17,15 @@
       <%= @product.name %>
     </p>
 
+    <p><strong>Colors:</strong></p>
+  <div class="circle-with-border draw-outside" style="background-color: <%= @product.color %>;"></div>
+
+
+
     <p><strong>Size:</strong>
       <div class="app__product__sizes__selector">
-        <a href="#select">PP</a>
-        <a href="#select">P</a>
-        <a href="#select">M</a>
-        <a href="#select">G</a>
-        <a href="#select">GG</a>
+        <a href="#select"><%= @product.size.first %></a>
       </div>
-    </p>
-
-    <p><strong>Colors:</strong>
-      <i class="fas fa-circle red"></i>
-      <i class="fas fa-circle yellow"></i>
-      <i class="fas fa-circle"></i>
     </p>
 
     <h2>Rating</h2>
@@ -45,8 +40,7 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input class="btn btn-outline-secondary btn-lg btn-block" type="submit" value="Adicionar ao carrinho">
     </form>
-
-    <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
+    <h4><i class="fab fa-whatsapp"></i> Entre em contato com a gente </h4>
   </div>
 </div>
 
@@ -59,9 +53,3 @@
   <i class="fas fa-trash"></i>
 <% end %>
 
- <div class="app__product__colors">
-<!-- <h5>Cor: <span>COBRE</span></h5>
-      <div class="app__product__colors__selector">
-        <a class="" data-code-color="20005632_010" data-color="AMARELO" href="/p/blusa-basica-u/amarelo"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_010.gif" alt="AMARELO"></a>
-        <a class="" data-code-color="20005632_047" data-color="AZUL CLARO" href="/p/blusa-basica-u/azul-claro"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_047.gif" alt="AZUL CLARO"></a>
-        <a class="" data-code-color="20005632_004" data-color="BRANCO" href="/p/blusa-basica-u/branco"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_004.gif" alt="BRANCO"></a><a class="is-active" data-code-color="20005632_053" data-color="COBRE" href="/p/blusa-basica-u/cobre"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_053.gif" alt="COBRE"></a><a class="" data-code-color="20005632_382" data-color="FENDI" href="/p/blusa-basica-u/fendi"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_382.gif" alt="FENDI"></a><a class="" data-code-color="20005632_011" data-color="LARANJA" href="/p/blusa-basica-u/laranja"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_011.gif" alt="LARANJA"></a><a class="" data-code-color="20005632_016" data-color="MARINHO" href="/p/blusa-basica-u/marinho"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_016.gif" alt="MARINHO"></a><a class="" data-code-color="20005632_008" data-color="MARROM" href="/p/blusa-basica-u/marrom"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_008.gif" alt="MARROM"></a><a class="" data-code-color="20005632_036" data-color="MOSTARDA" href="/p/blusa-basica-u/mostarda"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_036.gif" alt="MOSTARDA"></a><a class="" data-code-color="20005632_002" data-color="PRETO" href="/p/blusa-basica-u/preto"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_002.gif" alt="PRETO"></a><a class="" data-code-color="20005632_022" data-color="SALMÃO" href="/p/blusa-basica-u/salmao"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_022.gif" alt="SALMÃO"></a><a class="" data-code-color="20005632_089" data-color="TERRA" href="/p/blusa-basica-u/terra"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_089.gif" alt="TERRA"></a><a class="" data-code-color="20005632_055" data-color="VERDE AGUA" href="/p/blusa-basica-u/verde-agua"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_055.gif" alt="VERDE AGUA"></a><a class="" data-code-color="20005632_012" data-color="VERMELHO" href="/p/blusa-basica-u/vermelho"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_012.gif" alt="VERMELHO"></a><a class="" data-code-color="20005632_127" data-color="VERMELHO QUEIMADO" href="/p/blusa-basica-u/vermelho-queimado"><img src="https://amarotech-res.cloudinary.com/image/fetch/c_limit,f_auto,dpr_2,w_1280,q_auto:best/v11587758622/https://cdn.amaro.com/uploads/icons/20005632_127.gif" alt="VERMELHO QUEIMADO"></a></div></div> -->
