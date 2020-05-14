@@ -29,6 +29,26 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+   document.querySelectorAll('.card-img-top').forEach(item => {
+  item.addEventListener('mouseover', event => {
+    mouseOver(item);
+    //handle click
+  })
+})
+document.querySelectorAll('.card-img-top').forEach(item => {
+  item.addEventListener('mouseout', event => {
+    mouseOut(item);
+    //handle click
+  })
+})
+
+function mouseOver(item) {
+  item.src='https://unsplash.com/photos/Fr6zexbmjmc';
+}
+function mouseOut(item) {
+ item.src='https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80';
+}
+
   // Call your functions here, e.g:
   // initSelect2();
   // var type = document.getElementById("product_type_id");
