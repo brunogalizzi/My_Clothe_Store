@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :carts
   resources :cart_products, only: :create
   get "/pagamento", to: 'carts#pagamento', as: 'pagamento'
+  get '/resumo', to: 'carts#resumo', as: 'resumo'
   get '/blusas', to: 'types#blusas', as: 'blusas'
   get '/sapatos', to: 'types#sapatos', as: 'sapatos'
   get '/products/set_type/:type_id', to: 'products#set_type'
