@@ -1,21 +1,23 @@
-<div class="row container">
+<div class="container">
+  <div class="row">
 
-  <!-- Fotos do produto -->
-  <div class="product-img col-6">
-    <% if @product.photos.present? %>
-      <% @product.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <!-- Fotos do produto -->
+    <div class="product-img col-6">
+      <% if @product.photos.present? %>
+        <% @product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      <% else %>
+        <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= @product.id %>" alt="Card image cap">
       <% end %>
-    <% else %>
-      <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= @product.id %>" alt="Card image cap">
-    <% end %>
-  </div>
+    </div>
 
-  <!-- Infos - nome, tamanho, cor, avaliação, add carrinho e compartilhar -->
-  <div class="atributes col-6">
-    <p><strong>Name:</strong>
-      <%= @product.name %>
-    </p>
+    <!-- Infos - nome, tamanho, cor, avaliação, add carrinho e compartilhar -->
+    <div class="atributes col-6">
+      <p><strong>Name:</strong>
+        <%= @product.name %>
+      </p>
+
 
     <p><strong>Colors:</strong></p>
   <div class="circle-with-border draw-outside" style="background-color: <%= @product.color %>;"></div>
@@ -42,16 +44,15 @@
     </form>
     <h4><i class="fab fa-whatsapp"></i> Entre em contato com a gente </h4>
   </div>
-</div>
 
-<!-- Links -->
-<br>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', root_path %>
+  <!-- Links -->
+  <br>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', root_path %>
 
-<%= link_to product_path(@product), method: :delete, data: {:confirm => "You sure?" } do  %>
-  <i class="fas fa-trash"></i>
-<% end %>
+  <%= link_to product_path(@product), method: :delete, data: {:confirm => "You sure?" } do  %>
+    <i class="fas fa-trash"></i>
+  <% end %>
 
 <style>
 .carousel-item-next:not(.carousel-item-left),
