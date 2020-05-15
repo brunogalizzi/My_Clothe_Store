@@ -9,11 +9,12 @@ class ProductsController < ApplicationController
   skip_after_action :verify_authorized, only: :set_type
   def index
     @products = policy_scope(Product).order(created_at: :desc)
-    #  if params[:query].present?
-    #   @products = Product.global_search(params[:query])
-    # else
-    #   @products = Product.all
-    # end
+    @cart = Cart.find_or_create_by!(user: current_user, status: false)
+    @cart_products = @cart.cart_products
+    @total = 0
+    @cart_products.each do |prod|
+      @total += prod.product.price*prod.quantity
+    end
   end
   def show
     authorize @product

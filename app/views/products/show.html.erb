@@ -53,3 +53,13 @@
   <i class="fas fa-trash"></i>
 <% end %>
 
+<style>
+.carousel-item-next:not(.carousel-item-left),
+.active.carousel-item-right {
+  transform: translateY(100%);
+}
+.carousel-item-prev:not(.carousel-item-right),
+.active.carousel-item-left {
+  transform: translateY(-100%);
+}
+</style>
