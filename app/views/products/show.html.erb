@@ -1,64 +1,66 @@
-<div class="row container">
+<div class="container">
+  <div class="row">
 
-  <!-- Fotos do produto -->
-  <div class="product-img col-6">
-    <% if @product.photos.present? %>
-      <% @product.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <!-- Fotos do produto -->
+    <div class="product-img col-6">
+      <% if @product.photos.present? %>
+        <% @product.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      <% else %>
+        <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= @product.id %>" alt="Card image cap">
       <% end %>
-    <% else %>
-      <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= @product.id %>" alt="Card image cap">
-    <% end %>
+    </div>
+
+    <!-- Infos - nome, tamanho, cor, avaliação, add carrinho e compartilhar -->
+    <div class="atributes col-6">
+      <p><strong>Name:</strong>
+        <%= @product.name %>
+      </p>
+
+      <p><strong>Size:</strong>
+        <div class="app__product__sizes__selector">
+          <a href="#select">PP</a>
+          <a href="#select">P</a>
+          <a href="#select">M</a>
+          <a href="#select">G</a>
+          <a href="#select">GG</a>
+        </div>
+      </p>
+
+      <p><strong>Colors:</strong>
+        <i class="fas fa-circle red"></i>
+        <i class="fas fa-circle yellow"></i>
+        <i class="fas fa-circle"></i>
+      </p>
+
+      <h2>Rating</h2>
+      <span class="fas fa-star"></span>
+      <span class="fas fa-star"></span>
+      <span class="fas fa-star"></span>
+      <span class="fas fa-star-half-alt"></span>
+      <span class="fa fa-star not"></span>
+      <h4>Avaliado por 1 pessoa</h4>
+
+      <form action="/cart_products?product_id=<%= @product.id %>" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input class="btn btn-outline-secondary btn-lg btn-block" type="submit" value="Adicionar ao carrinho">
+      </form>
+
+      <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
+    </div>
   </div>
 
-  <!-- Infos - nome, tamanho, cor, avaliação, add carrinho e compartilhar -->
-  <div class="atributes col-6">
-    <p><strong>Name:</strong>
-      <%= @product.name %>
-    </p>
+  <!-- Links -->
+  <br>
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', root_path %>
 
-    <p><strong>Size:</strong>
-      <div class="app__product__sizes__selector">
-        <a href="#select">PP</a>
-        <a href="#select">P</a>
-        <a href="#select">M</a>
-        <a href="#select">G</a>
-        <a href="#select">GG</a>
-      </div>
-    </p>
+  <%= link_to product_path(@product), method: :delete, data: {:confirm => "You sure?" } do  %>
+    <i class="fas fa-trash"></i>
+  <% end %>
 
-    <p><strong>Colors:</strong>
-      <i class="fas fa-circle red"></i>
-      <i class="fas fa-circle yellow"></i>
-      <i class="fas fa-circle"></i>
-    </p>
-
-    <h2>Rating</h2>
-    <span class="fas fa-star"></span>
-    <span class="fas fa-star"></span>
-    <span class="fas fa-star"></span>
-    <span class="fas fa-star-half-alt"></span>
-    <span class="fa fa-star not"></span>
-    <h4>Avaliado por 1 pessoa</h4>
-
-    <form action="/cart_products?product_id=<%= @product.id %>" method="post">
-      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input class="btn btn-outline-secondary btn-lg btn-block" type="submit" value="Adicionar ao carrinho">
-    </form>
-
-    <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
-  </div>
 </div>
-
-<!-- Links -->
-<br>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', root_path %>
-
-<%= link_to product_path(@product), method: :delete, data: {:confirm => "You sure?" } do  %>
-  <i class="fas fa-trash"></i>
-<% end %>
-
  <div class="app__product__colors">
 <!-- <h5>Cor: <span>COBRE</span></h5>
       <div class="app__product__colors__selector">
