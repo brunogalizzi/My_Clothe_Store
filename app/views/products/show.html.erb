@@ -17,20 +17,15 @@
       <%= @product.name %>
     </p>
 
+    <p><strong>Colors:</strong></p>
+  <div class="circle-with-border draw-outside" style="background-color: <%= @product.color %>;"></div>
+
+
+
     <p><strong>Size:</strong>
       <div class="app__product__sizes__selector">
-        <a href="#select">PP</a>
-        <a href="#select">P</a>
-        <a href="#select">M</a>
-        <a href="#select">G</a>
-        <a href="#select">GG</a>
+        <a href="#select"><%= @product.size.first %></a>
       </div>
-    </p>
-
-    <p><strong>Colors:</strong>
-      <i class="fas fa-circle red"></i>
-      <i class="fas fa-circle yellow"></i>
-      <i class="fas fa-circle"></i>
     </p>
 
     <h2>Rating</h2>
@@ -45,8 +40,7 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input class="btn btn-outline-secondary btn-lg btn-block" type="submit" value="Adicionar ao carrinho">
     </form>
-
-    <i class="fab fa-whatsapp"></i> <h4>Entre em contato com a gente </h4>
+    <h4><i class="fab fa-whatsapp"></i> Entre em contato com a gente </h4>
   </div>
 </div>
 

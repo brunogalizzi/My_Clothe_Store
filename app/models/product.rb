@@ -8,3 +8,10 @@ class Product < ApplicationRecord
   has_many :carts, through: :cart_products
   has_many_attached :photos
 end
+
+# include PgSearch::Model
+#   pg_search_scope :global_search,
+#     against: [ :name, :type, :size, :color ],
+#     using: {
+#       tsearch: { prefix: true }
+#     }

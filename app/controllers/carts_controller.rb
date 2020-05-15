@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   def index
-    @cart = policy_scope(Product).order(created_at: :desc)
-    authorize @cart
+    @cart = policy_scope(Cart).order(created_at: :desc)
     @cart = Cart.find_or_create_by!(user: current_user, status: false)
     @cart_products = @cart.cart_products
     @total = 0
@@ -11,7 +10,7 @@ class CartsController < ApplicationController
     # @cart = Cart.find(params[:id])
   end
   def pagamento
-    @cart = policy_scope(Product).order(created_at: :desc)
+    @cart = Cart.find_by(user: current_user, status: false)
     authorize @cart
   end
 end

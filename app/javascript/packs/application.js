@@ -29,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+
    document.querySelectorAll('.card-img-top').forEach(item => {
   item.addEventListener('mouseover', event => {
     mouseOver(item);
@@ -38,9 +39,6 @@ document.addEventListener('turbolinks:load', () => {
 document.querySelectorAll('.card-img-top').forEach(item => {
   item.addEventListener('mouseout', event => {
     mouseOut(item);
-    //handle click
-  })
-})
 
 function mouseOver(item) {
   item.src='https://unsplash.com/photos/Fr6zexbmjmc';
