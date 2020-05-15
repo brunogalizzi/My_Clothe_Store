@@ -39,6 +39,8 @@ document.addEventListener('turbolinks:load', () => {
 document.querySelectorAll('.card-img-top').forEach(item => {
   item.addEventListener('mouseout', event => {
     mouseOut(item);
+  })
+})
 
 function mouseOver(item) {
   item.src='https://unsplash.com/photos/Fr6zexbmjmc';
