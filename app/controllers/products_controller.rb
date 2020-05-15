@@ -9,6 +9,12 @@ class ProductsController < ApplicationController
   skip_after_action :verify_authorized, only: :set_type
   def index
     @products = policy_scope(Product).order(created_at: :desc)
+    @cart = Cart.find_or_create_by!(user: current_user, status: false)
+    @cart_products = @cart.cart_products
+    @total = 0
+    @cart_products.each do |prod|
+      @total += prod.product.price*prod.quantity
+    end
     # client = GoogleSearchResults.new(q: "coffee", serp_api_key: "66eae7246e7f16569d1b339edfaf198de0676f9711d17ef0840409b88c319a27", tbm: 'isch')
     # url = client.get_hash[:images_results][0][:original]
   end
