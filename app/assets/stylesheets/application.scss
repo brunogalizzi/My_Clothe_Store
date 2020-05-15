@@ -157,3 +157,138 @@
   }
 }
 
+
+  .modal.left .modal-dialog,
+  .modal.right .modal-dialog {
+    // position: fixed;
+    margin: auto;
+    width: 409px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+  }
+
+  .modal.left .modal-content,
+  .modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 160px;
+  }
+
+  .modal.left .modal-body,
+  .modal.right .modal-body {
+    padding: 15px 15px 80px;
+  }
+
+/*Right*/
+  .modal.right.fade .modal-dialog {
+    right: -276px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+            transition: opacity 0.3s linear, right 0.3s ease-out;
+  }
+
+  .modal.right.fade.in .modal-dialog {
+    right: 0;
+  }
+
+/* ----- MODAL STYLE ----- */
+  .modal-content {
+    border-radius: 0;
+    border: none;
+  }
+
+  .modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+  }
+
+.app__cart__header {
+    align-items: center;
+    border-bottom: .1rem solid #ccc;
+    display: flex;
+    height: 5rem;
+    justify-content: space-between;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+    position: relative;
+}
+
+.app__cart__header h4 {
+    flex: 1 1;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.app__cart__header>* {
+    line-height: 1;
+}
+
+.app__cart__header>* {
+    line-height: 1;
+}
+
+.app__cart__footer>div:not(.app__cart__footer__shipping):not(.app__cart__footer__coupon), .app__cart__footer__coupon form, .app__cart__footer__zip {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.app__cart__footer {
+    border-top: .1rem solid #ccc;
+    padding: 0 1rem 1rem;
+}
+
+.app__cart__footer>div:not(:last-child) {
+    border-bottom: .1rem solid #ccc;
+    font-size: 1.4rem;
+    line-height: 1;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.app__footer {
+    background-color: #f4f4f4;
+    color: #000;
+    font-size: 1.3rem;
+    position: relative;
+    text-align: center;
+}
+
+.app__footer .app__container {
+    padding-top: 3rem;
+}
+
+.app__footer__cta {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.app__newsletter--footer .form-inline {
+    position: relative;
+}
+
+.app__footer__primary {
+    display: flex;
+    justify-content: center;
+    margin: 6rem auto 0;
+    max-width: 85rem;
+}
+
+.app__footer__secondary {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+}
+.app__footer__copyright {
+    border-top: .1rem solid #ccc;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding: 1.5rem 0;
+    text-align: center;
+}

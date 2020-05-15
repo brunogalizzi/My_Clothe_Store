@@ -1,46 +1,41 @@
-<div class="container">
-  <div class="mainbanners">
-    <%= render 'products/carousel' %>
-  </div>
+<div class="mainbanners">
+  <%= render 'products/carousel' %>
+</div>
 
-  <div class="d-flex justify-content ajuste-title">
-    <h1>All Products</h1>
-  </div>
+<div class="d-flex justify-content ajuste-title">
+  <h1>All Products</h1>
+</div>
 
-  <div class="row">
-    <% @products.each do |product| %>
-      <div class="col-4 apply_filter">
-        <div class="flexpower">
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col-3 apply_filter">
+      <div class="flexpower">
+        <%= link_to product_path(product) do %>
+          <div class="card" style="width: 18rem;">
+            <!-- Se o produto tiver imagem ela aparece, senão gera automaticamente -->
+            <% if product.photos.present? %>
+              <%= cl_image_tag product.photos.first.key, class:"card-img-top" %>
+            <% else %>
+              <img id="myImage" class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+            <% end %>
 
-          <%= link_to product_path(product) do %>
-            <div class="card" style="width: 18rem;">
+            <!-- Div do card -->
+            <div class="card-body">
+              <h4 class="card-title text-align" id="item"><%= product.name %></h4>
+              <div class="app_product-box_pricing">
 
-              <!-- Se o produto tiver imagem ela aparece, senão gera automaticamente -->
-              <% if product.photos.present? %>
-                <%= cl_image_tag product.photos.first.key, class:"card-img-top" %>
-              <% else %>
-                <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
-              <% end %>
-
-              <!-- Div do card -->
-              <div class="card-body">
-                <h4 class="card-title text-align" id="item"><%= product.name %></h4>
-                <div class="app_product-box_pricing">
-
-                  <!-- Preço atual -->
-                  <div class="app_product-box_cost app_product-box_cost--promote">
-                    <span>6x R$<%= product.price/6 %></span>
-                  </div>
-
-                  <!-- Preço cheio -->
-                  <div class="app__product-box__sale">
-                    <span>R$ <%= (product.price*0.58).round(2) %></span>
-                    <span>(58% off)</span>
-                  </div>
-
-                  <!-- Ver mais -->
-                  <%= link_to 'Ver mais', product_path(product), class: 'btn btn-outline-secondary btn-lg btn-block' %>
+                <!-- Preço atual -->
+                <div class="app_product-box_cost app_product-box_cost--promote">
+                  <span>6x R$<%= product.price/6 %></span>
                 </div>
+
+                <!-- Preço cheio -->
+                <div class="app__product-box__sale">
+                  <span>R$ <%= (product.price*0.58).round(2) %></span>
+                  <span>(58% off)</span>
+                </div>
+                <!-- Ver mais -->
+                <%= link_to 'Ver mais', product_path(product), class: 'btn btn-outline-secondary btn-lg btn-block' %>
               </div>
 
             </div>
