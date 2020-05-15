@@ -29,29 +29,24 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-// document.getElementById("myImage").addEventListener("mouseover", mouseOver);
-// document.getElementById("myImage").addEventListener("mouseout", mouseOut);
 
-document.getElementsByClassName('card-img-top').forEach(item => {
-  item.addEventListener('mouseOver', event => {
-    alert("teste");
+   document.querySelectorAll('.card-img-top').forEach(item => {
+  item.addEventListener('mouseover', event => {
+    mouseOver(item);
     //handle click
   })
 })
-document.getElementsByClassName('card-img-top').forEach(item => {
+document.querySelectorAll('.card-img-top').forEach(item => {
   item.addEventListener('mouseout', event => {
-    mouseOut;
-    //handle click
-  })
-})
+    mouseOut(item);
 
-function mouseOver() {
-  document.getElementById('myImage').src='https://source.unsplash.com/random';
+function mouseOver(item) {
+  item.src='https://unsplash.com/photos/Fr6zexbmjmc';
+}
+function mouseOut(item) {
+ item.src='https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80';
 }
 
-function mouseOut() {
-  document.getElementById('myImage').src='https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80';
-}
   // Call your functions here, e.g:
   // initSelect2();
   // var type = document.getElementById("product_type_id");

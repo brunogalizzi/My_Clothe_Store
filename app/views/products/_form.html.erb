@@ -1,17 +1,19 @@
 <div class="col-4 mx-auto" style="font-size: 18px">
    <!-- Form para add produto -->
    <%= simple_form_for(@product) do |f| %>
+   <% @pe = f.association :type %>
       <%= f.input :name %>
     <div class="d-flex justify-content-between">
       <div class="col-9 mx-0">
-      <%= f.association :type %>
+      <%= @pe %>
       </div>
       <div>
          <label for="product_size">Size</label>
          <br>
-         <% unless @type.nil? %>
+         <% if @pe.scan(/Blusas/) == "Blusas"  %>
          <select name="product[size]" id="product_size">
-            <% @type.first.size.split('"').each_with_index do |size, i| %>
+            <% type = Type.all.select { |type| type.name == @pe} %>
+            <% type.first.size.split('"').each_with_index do |size, i| %>
             <% if i.odd? %>
             <option value="size"><%= size %></option>
             <% end %>
@@ -43,3 +45,37 @@
    </div>
    <% end %>
 </div>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+var typesBySize = {
+Camisa: ["Small","Medium","Large"],
+Sapato: ["42","43","44"],
+}
+function makeSubmenu(value) {
+if(value.length==0) document.getElementById("typeSelect").innerHTML = "<option></option>";
+else {
+var typesOptions = "";
+for(typeId in typesBySize[value]) {
+typesOptions+="<option>"+typesBySize[value][typeId]+"</option>";
+}
+document.getElementById("typeSelect").innerHTML = typesOptions;
+}
+}
+function resetSelection() {
+document.getElementById("typeSelect").selectedIndex = 0;
+}
+</script>
+</head>
+<body onload="resetSelection()">
+<select id="" size="1" onchange="makeSubmenu(this.value)">
+<option value="" disabled selected>Choose Type</option>
+<option>Sapato</option>
+<option>Camisa</option>
+</select>
+<select id="typeSelect" size="1" >
+<option value="" disabled selected>Choose Size</option>
+<option></option>
+</select>
+</body>
