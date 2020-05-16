@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :products, except: :index
   resources :users, except: [:index, :destroy]
   resources :carts
-  resources :cart_products, only: :create
+  resources :cart_products, only: [:create, :destroy]
   get "/pagamento", to: 'carts#pagamento', as: 'pagamento'
   get '/resumo', to: 'carts#resumo', as: 'resumo'
   get '/blusas', to: 'types#blusas', as: 'blusas'

@@ -6,4 +6,14 @@ class CartProductsController < ApplicationController
     authorize @cart_product
     redirect_to root_path
   end
+
+  def destroy
+    @cart_product = CartProduct.find(params[:id])
+    authorize @cart_product
+    @cart_product.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'product was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 end
