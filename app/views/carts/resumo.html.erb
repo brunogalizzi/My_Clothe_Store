@@ -52,9 +52,9 @@
          </div>
       </div>
       <div class="col-3 mx-auto" style="margin-bottom: 40px">
-      <form action="<%= root_path %>">
-          <input class="btn btn-dark btn-lg btn-block" type="submit" value="Comprar mais">
-        </form>
+        <%= link_to cart_path(@cart), method: :delete do  %>
+           <i class="btn btn-dark btn-lg btn-block">Comprar mais</i>
+        <% end %>
       </div>
       <div class="ui-panel ui-panel--group myml-ui-relevant-box">
          <div class="ui-panel__content">

@@ -3,7 +3,7 @@ class CreateCartProducts < ActiveRecord::Migration[6.0]
     create_table :cart_products do |t|
       t.integer :quantity
       t.references :product, null: false, foreign_key: true
-      t.references :cart, null: false, foreign_key: true
+      t.references :cart, foreign_key: true
 
       t.timestamps
     end
