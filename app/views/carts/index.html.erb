@@ -33,9 +33,10 @@
                      </div>
                      <div class="app__cart__item__price">
                         <span class="is-numeric">R$ <%= prod.product.price %>,00</span>
+                        <%= link_to cart_product_path(prod), method: :delete, data: {:confirm => "You sure?" } do  %>
+                        <i class="fas fa-trash"></i>
+                      <% end %>
                      </div>
-                  </div>
-                  <div class="app__cart__item__warning">Quantidade indisponível.
                   </div>
                </div>
             </div>
