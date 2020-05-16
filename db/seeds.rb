@@ -1,5 +1,6 @@
 require 'uri'
 
+Cart.destroy_all
 CartProduct.destroy_all
 Product.destroy_all
 User.destroy_all
