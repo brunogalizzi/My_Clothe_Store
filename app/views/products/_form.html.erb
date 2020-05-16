@@ -7,36 +7,17 @@
       <div class="col-9 mx-0">
       <%= @pe %>
       </div>
+      <%= f.input :size, collection: ["S", "M", "L"], class: "text-right" %>
       <div>
-         <label for="product_size">Size</label>
          <br>
-         <% if @pe.scan(/Blusas/) == "Blusas"  %>
-         <select name="product[size]" id="product_size">
-            <% type = Type.all.select { |type| type.name == @pe} %>
-            <% type.first.size.split('"').each_with_index do |size, i| %>
-            <% if i.odd? %>
-            <option value="size"><%= size %></option>
-            <% end %>
-            <% end %>
-         </select>
-         <% end %>
       </div>
    </div>
    <div class="d-flex justify-content-between">
       <%= f.input :stock %>
-      <div class="text-right">
-         <label for="product_color">Color</label>
-         <br>
-         <% unless @type.nil? %>
-         <select name="product[color]" id="product_color">
-            <% @type.first.color.split('"').each_with_index do |color, i| %>
-            <% if i.odd? %>
-            <option value="cor"><%= color %></option>
-            <% end %>
-            <% end %>
-         </select>
-         <% end %>
+      <div class="billie-jean">
+      <%= f.input :color, collection: ["red", "blue", "yellow", "green"] %>
       </div>
+         <br>
    </div>
    <%= f.input :price %>
    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
@@ -46,36 +27,3 @@
    <% end %>
 </div>
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript">
-var typesBySize = {
-Camisa: ["Small","Medium","Large"],
-Sapato: ["42","43","44"],
-}
-function makeSubmenu(value) {
-if(value.length==0) document.getElementById("typeSelect").innerHTML = "<option></option>";
-else {
-var typesOptions = "";
-for(typeId in typesBySize[value]) {
-typesOptions+="<option>"+typesBySize[value][typeId]+"</option>";
-}
-document.getElementById("typeSelect").innerHTML = typesOptions;
-}
-}
-function resetSelection() {
-document.getElementById("typeSelect").selectedIndex = 0;
-}
-</script>
-</head>
-<body onload="resetSelection()">
-<select id="" size="1" onchange="makeSubmenu(this.value)">
-<option value="" disabled selected>Choose Type</option>
-<option>Sapato</option>
-<option>Camisa</option>
-</select>
-<select id="typeSelect" size="1" >
-<option value="" disabled selected>Choose Size</option>
-<option></option>
-</select>
-</body>
