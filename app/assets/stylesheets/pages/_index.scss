@@ -97,6 +97,18 @@ img, svg {
 }
 
 
+.app_product-box_pricing {
+    align-content: space-evenly;
+    align-items: flex-start;
+    display: flow-root;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 4.4rem;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+}
+
 // .app__checkout__nav {
 //     top: 8.2rem;
 // }
