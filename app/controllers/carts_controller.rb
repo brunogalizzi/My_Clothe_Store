@@ -12,7 +12,13 @@ class CartsController < ApplicationController
   end
   def pagamento; end
 
-  def resumo; end
+  def resumo
+    @cart_products = @cart.cart_products
+    @total = 0
+    @cart_products.each do |prod|
+      @total += prod.product.price*prod.quantity
+    end
+  end
 
   private
 

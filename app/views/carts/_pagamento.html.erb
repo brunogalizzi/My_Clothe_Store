@@ -44,9 +44,13 @@
    </div>
    <div class="panel-footer mx-auto">
       <div class="row">
-         <div class="col-xs-12">
-            <button class="btn btn-dark btn-lg btn-block">Process payment</button>
-         </div>
+        <form action="<%= carts_path %>">
+          <input class="btn btn-dark btn-lg btn-block" type="submit" value="Back to address" />
+        </form>
+&nbsp&nbsp&nbsp
+        <form action="<%= resumo_path %>">
+          <input class="btn btn-dark btn-lg btn-block" type="submit" value="Process payment" />
+        </form>
       </div>
    </div>
 </div>
