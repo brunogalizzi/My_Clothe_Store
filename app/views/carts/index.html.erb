@@ -19,7 +19,7 @@
          <div class="app__cart__item">
             <div class="app__cart__item__container">
                <div class="app__cart__item__image">
-                  <img src="https://source.unsplash.com/random?sig=<%= prod.id %>" alt="Card image cap">
+                  <%= cl_image_tag prod.product.photos.first.key %>
                </div>
                <div class="app__cart__item__info">
                   <a class="app__cart__item__name" ><%= prod.product.name %></a>
@@ -75,7 +75,7 @@
          <p>Valor</p>
       </div>
       <div class="col-4">
-         <p>R$<%= @total %></p>
+         <p>R$<%= @total %>,00</p>
       </div>
    </div>
    <%= link_to 'pague agora', pagamento_path, class: 'btn btn-dark btn-lg btn-block' %>

@@ -30,24 +30,27 @@ import "bootstrap";
 
 document.addEventListener('turbolinks:load', () => {
 
-   document.querySelectorAll('.card-img-top').forEach(item => {
+});
+var item2 = ''
+document.querySelectorAll('.card-img-top').forEach(item => {
   item.addEventListener('mouseover', event => {
+    item2 = item.src;
     mouseOver(item);
     //handle click
   })
 })
 document.querySelectorAll('.card-img-top').forEach(item => {
   item.addEventListener('mouseout', event => {
-    mouseOut(item);
+    mouseOut(item, item2);
   })
 })
+  function mouseOver(item) {
+    item.src='https://source.unsplash.com/random';
+  }
 
-function mouseOver(item) {
-  item.src='https://unsplash.com/photos/Fr6zexbmjmc';
-}
-function mouseOut(item) {
- item.src='https://images.unsplash.com/photo-1504326787394-e6d75cae8027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80';
-}
+  function mouseOut(item, item2) {
+    item.src=item2;
+  }
 
   // Call your functions here, e.g:
   // initSelect2();
@@ -72,6 +75,5 @@ function mouseOut(item) {
   //     }
   //   });
   // });
-});
 
 
