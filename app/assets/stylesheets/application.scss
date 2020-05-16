@@ -292,3 +292,129 @@
     padding: 1.5rem 0;
     text-align: center;
 }
+
+.purchases-container {
+    display: block;
+}
+.purchases-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.myml-main-content {
+    float: left;
+    margin: 0 3% 0 0;
+    width: 55%;
+}
+
+.myml-main-content {
+    -webkit-box-ordinal-group: 3;
+    -ms-flex-order: 2;
+}
+
+.myml-ui-relevant-box .ui-panel__content {
+    padding: 8px;
+}
+
+.ui-panel {
+    margin-bottom: 20px;
+}
+
+.myml-ui-relevant-box {
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.myml-ui-arrange-box {
+    text-align: left;
+}
+
+.myml-ui-arrange-box__icon {
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 0;
+}
+
+.ui-badge--small {
+    width: 40px;
+    height: 40px;
+}
+
+.u-bg-color--light-gray {
+    background-color: #d7d7d7!important;
+}
+
+.ui-badge {
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.ui-badge--small .ui-badge__icon {
+    max-width: 24px;
+}
+
+.ui-badge__icon {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin: auto;
+    position: absolute;
+}
+
+.ui-badge__complementary-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -20%;
+}
+
+.myml-ui-arrange-box__info {
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+
+.myml-ui-arrange-box__title {
+    margin-bottom: 2px;
+}
+.myml-ui-arrange-box__title {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.myml-ui-arrange-box:after, .myml-ui-arrange-box:before {
+    display: table;
+    content: '';
+}
+
+.myml-ui-arrange-box:after {
+    clear: both;
+}
+
+.myml-ui-arrange-box:after, .myml-ui-arrange-box:before {
+    display: table;
+    content: '';
+}
+
+menu, ol, ul {
+    list-style: none;
+}
+
+.purchases-payment-method__payment:last-child {
+    padding: 0;
+}
+
+.purchases-payment__subtitle {
+  text-align: center !important;
+}

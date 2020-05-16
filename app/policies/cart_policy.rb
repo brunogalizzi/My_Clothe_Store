@@ -8,4 +8,8 @@ class CartPolicy < ApplicationPolicy
   def pagamento?
     record.user == user
   end
+
+  def resumo?
+    record.user == user
+  end
 end

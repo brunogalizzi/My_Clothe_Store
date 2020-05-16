@@ -1,0 +1,145 @@
+<div class="row checkout-nav">
+   <div class="col-sm checkout-options-paid">
+      Endereço
+   </div>
+   <div class="col-sm checkout-options-third">
+      Pagamento
+   </div>
+   <div class="col-sm checkout-options-resumo">
+      Resumo
+   </div>
+</div>
+<div class="purchases-container" data-js="vpp-container" style="font-size: 18px">
+   <div class="myml-main-content mx-auto">
+      <div class="ui-panel myml-ui-relevant-box">
+         <div class="ui-panel__content purchases-payment">
+            <h2 class="purchases-payment__subtitle">Resumo da compra</h2>
+            <div class="purchases-payment__container d-flex center">
+               <table class="purchases-payment__table" cellpadding="0" cellspacing="0" border="0">
+                  <tbody>
+                     <tr class="purchases-payment__summary ">
+                        <td class="u-truncate ">Produtos</td>
+                        <td class="">
+                           <span class="price-tag mx-3" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                              <meta itemprop="price" content="54,99">
+                              <span class="price-tag-symbol" itemprop="priceCurrency" content="ARS">R$</span>
+                              <span class="price-tag-fraction"><%= @total %>,00</span>
+                           </span>
+                        </td>
+                     </tr>
+                     <tr class="purchases-payment__summary purchases-payment__subtotal">
+                        <td class="u-truncate ">Custo de envio</td>
+                        <td class="">
+                           <span class="price-tag mx-3" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                              <meta itemprop="price" content="19,90">
+                              <span class="price-tag-symbol" itemprop="priceCurrency" content="ARS">R$ 0,00</span>
+                           </span>
+                        </td>
+                     </tr>
+                     <tr class="u-hline">
+                        <td class="purchases-payment__emphasize-txt">O seu pagamento</td>
+                        <td class="purchases-payment__installments purchases-payment__emphasize-txt">
+                           <span class="price-tag mx-3" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                              <meta itemprop="price" content="74,89">
+                              <span class="price-tag-symbol" itemprop="priceCurrency" content="ARS">R$</span>
+                              <span class="price-tag-fraction"><%= @total %>,00</span>
+                           </span>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
+      <div class="col-3 mx-auto" style="margin-bottom: 40px">
+      <form action="<%= root_path %>">
+          <input class="btn btn-dark btn-lg btn-block" type="submit" value="Comprar mais">
+        </form>
+      </div>
+      <div class="ui-panel ui-panel--group myml-ui-relevant-box">
+         <div class="ui-panel__content">
+            <div class="myml-ui-arrange-box">
+               <div class="myml-ui-arrange-box__icon">
+                  <span class="ui-badge ui-badge--small u-bg-color--light-gray">
+                     <span class="ui-badge__icon">
+                        <svg width="19px" height="19px" viewBox="0 0 19 21" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M15.25 14.292H3.75v-1.917h11.5v1.917zm0-3.834H3.75V8.542h11.5v1.916zm0-3.833H3.75V4.708h11.5v1.917zM2.312 18.645l1.438 1.438 1.438-1.437 1.437 1.437 1.438-1.437L9.5 20.083l1.438-1.437 1.437 1.437 1.438-1.437 1.437 1.437 1.438-1.437 1.437 1.437V.917H.875v19.166l1.438-1.437z" fill="#FCFCFC" fill-rule="evenodd"></path>
+                        </svg>
+                     </span>
+                     <span class="ui-badge__complementary-icon">
+                     </span>
+                  </span>
+               </div>
+               <div class="myml-ui-arrange-box__info">
+                     <div class="myml-ui-arrange-box__info">
+                        <p class="myml-ui-arrange-box__title">Cartão de Crédito</p>
+                     </div>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="ui-panel myml-ui-relevant-box">
+         <div class="ui-panel__content">
+            <div class="myml-ui-arrange-box">
+               <div class="myml-ui-arrange-box__icon">
+                  <span class="ui-badge ui-badge--small u-bg-color--light-gray">
+                     <span class="ui-badge__icon">
+                        <svg width="15" height="20" viewBox="0 0 15 20" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M14.167 7.083C14.167 3.17 10.995 0 7.084 0 3.174 0 0 3.17 0 7.083 0 10.995 7.084 20.07 7.084 20.07s7.083-9.075 7.083-12.987zm-5.047 0c0-1.125-.912-2.036-2.036-2.036-1.125 0-2.038.91-2.038 2.036 0 1.125.913 2.036 2.038 2.036 1.124 0 2.036-.912 2.036-2.037z" fill="#FFFFFF" fill-rule="evenodd"></path>
+                        </svg>
+                     </span>
+                  </span>
+               </div>
+               <div class="myml-ui-arrange-box__info">
+                  <p class="myml-ui-arrange-box__title">Henrique Starling
+                  <br>Rua Felipe dos Santos, 760
+                  <br>Lourdes - Belo Horizonte/MG
+                  <br>CEP: 30180-160</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="myml-complementary-content mx-auto">
+      <div class="myml-ui-item-container ui-box ui-box--lite">
+         <div class="myml-ui-item-container__header">
+            <div class="purchase-vpp-status">
+               <div class="purchase-vpp-status__title-container">
+                  <h2 class="purchase-vpp-status__title purchase-vpp-status__title--black">Entrega prevista para 27 de maio</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="d-flex center">
+      <div class="checkout text-center">
+         <% @cart_products.each do |prod| %>
+         <div class="app__cart__item">
+            <div class="app__cart__item__container">
+               <div class="app__cart__item__image">
+                  <%= cl_image_tag prod.product.photos.first.key %>
+               </div>
+               <div class="app__cart__item__info">
+                  <a class="app__cart__item__name" ><%= prod.product.name %></a>
+                  <div class="app__cart__item__details">
+                     <span>Size:<%= prod.product.size %></span>
+                     <span>Color:<%= prod.product.color %></span>
+                  </div>
+                  <div class="app__cart__item__options">
+                     <div class="app__cart__item__quantity">
+                        <span class="is-numeric"><%= prod.quantity %></span>
+                     </div>
+                     <div class="app__cart__item__price">
+                        <span class="is-numeric">R$ <%= prod.product.price %>,00</span>
+                     </div>
+                  </div>
+                  <div class="app__cart__item__warning">Quantidade indisponível.
+                  </div>
+               </div>
+            </div>
+         </div>
+         <% end %>
+      </div>
+   </div>
+</div>
