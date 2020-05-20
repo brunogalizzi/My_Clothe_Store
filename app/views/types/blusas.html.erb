@@ -4,30 +4,105 @@
 <div class="d-flex justify-content ajuste-title">
   <h1>Todas as blusas</h1>
 </div>
-<div class="row">
-  <% @blusas.each do |blusa| %>
-  <div class="col-3 apply_filter">
-    <div class="flexpower">
-      <%= link_to product_path(blusa) do %>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= blusa.id %>" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title text-align"><%= blusa.name %></h4>
-          <div class="app_product-box_pricing">
-            <div class="app_product-box_cost app_product-box_cost--promote">
-              <span>R$<%= blusa.price %></span>
-              <span>6x R$<%= blusa.price/6 %></span>
+<div class="container row mx-auto">
+  <% @blusas.each do |product| %>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 apply_filter">
+      <div class="flexpower">
+        <div class="card" style="width: 18rem;">
+          <!-- Se o produto tiver imagem ela aparece, senão gera automaticamente -->
+          <% if product.photos.present? %>
+            <%= cl_image_tag product.photos.first.key, class:"card-img-top" %>
+          <% else %>
+            <img id="myImage" class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+          <% end %>
+          <!-- Div do card -->
+          <div class="card-body">
+            <h4 class="card-title text-align" id="item"><%= product.name %></h4>
+            <div class="app_product-box_pricing">
+              <!-- Preço atual -->
+              <div class="app_product-box_cost app_product-box_cost--promote">
+                <span>6x R$<%= product.price/6 %></span>
+              </div>
+              <!-- Preço cheio -->
+
+              <div class="app__product-box__sale">
+                <span>R$ <%= (product.price*0.58).round(2) %></span>
+                <span>(58% off)</span>
+              </div>
+              <!-- Ver mais -->
+              <button type="button" class="btn btn-outline-secondary btn-lg btn-block" data-toggle="modal" data-target="#modal<%= product.id %>">
+                Ver mais
+              </button>
             </div>
-            <div class="app__product-box__sale">
-              <span>R$ <%= (blusa.price*1.10).round(2) %>0</span>
-              <span>(58% off)</span>
+          </div>
+        </div>
+        <div class="modal fade" id="modal<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><p>
+                        <%= product.name %>
+                      </p></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <!-- Fotos do produto -->
+                    <div class="product-img col-6">
+                      <% if product.photos.present? %>
+                        <% product.photos.each do |photo| %>
+                          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+                        <% end %>
+                      <% else %>
+                        <img class="card-img-top" src="https://source.unsplash.com/random?sig=<%= product.id %>" alt="Card image cap">
+                      <% end %>
+                    </div>
+                    <!-- Infos - nome, tamanho, cor, avaliação, add carrinho e compartilhar -->
+                    <div class="atributes col-6">
+                      <p><strong>Colors:</strong>
+                      </p>
+                      <div class="circle-with-border draw-outside" style="background-color: <%= product.color %>;">
+                      </div>
+                      <p><strong>Size:</strong>
+                        <div class="app__product__sizes__selector">
+                          <a href="#select"><%= product.size.first(2) %></a>
+                        </div>
+                      </p>
+
+                      <h2>Rating</h2>
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star"></span>
+                      <span class="fas fa-star-half-alt"></span>
+                      <span class="fa fa-star not"></span>
+                      <h4>Avaliado por 1 pessoa</h4>
+
+                      <form action="/cart_products?product_id=<%= product.id %>" method="post">
+                        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                        <input class="btn btn-outline-secondary btn-lg btn-block" type="submit" value="Adicionar ao carrinho">
+                      </form>
+                      <h4><i class="fab fa-whatsapp"></i> Entre em contato com a gente </h4>
+                    </div>
+                  </div>
+
+                  <!-- Links -->
+                  <br>
+                  <% if current_user.present? && policy(product).update? %>
+                  <%= link_to 'Edit', edit_product_path(product) %>
+
+                  <%= link_to product_path(product), method: :delete, data: {:confirm => "You sure?" } do  %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                  <% end %>
+                </div>
+              </div>
             </div>
-            <%= link_to 'comprar', product_path(blusa), class: 'btn btn-outline-secondary btn-lg btn-block' %>
           </div>
         </div>
       </div>
-      <% end %>
     </div>
-  </div>
   <% end %>
 </div>
